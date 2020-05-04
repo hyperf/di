@@ -9,12 +9,11 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace HyperfTest\Di\Stub;
+namespace Hyperf\Di;
 
-class Demo
+interface ClosureDefinitionCollectorInterface
 {
-    public function getId()
-    {
-        return 1;
-    }
+    public function getParameters(\Closure $closure): array;
+
+    public function getReturnType(\Closure $closure): ReflectionType;
 }
